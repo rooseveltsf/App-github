@@ -6,7 +6,9 @@ import User from './pages/User';
 
 const Stack = createStackNavigator(
   {
-    Main,
+    Home: {
+      screen: Main,
+    },
     User,
   },
   {

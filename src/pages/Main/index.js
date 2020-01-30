@@ -61,6 +61,10 @@ export default function Main({ navigation }) {
     setLoading(false);
   }
 
+  function handleNavigate(user) {
+    navigation.navigate('User', { user });
+  }
+
   return (
     <Container>
       <Form>
@@ -90,12 +94,7 @@ export default function Main({ navigation }) {
             <Name>{item.name}</Name>
             <Bio>{item.bio}</Bio>
 
-            <ProfileButton
-              onPress={() =>
-                navigation.navigate('User', {
-                  login: users.login,
-                })
-              }>
+            <ProfileButton onPress={() => handleNavigate(item)}>
               <ProfileButtonText>Ver perfil</ProfileButtonText>
             </ProfileButton>
           </User>
